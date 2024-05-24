@@ -22,7 +22,7 @@ int main() {
     //assertEquals(0, w->getWordCount("ayala"), "hi", __LINE__);
     //assertEquals(0, w->getTotalWords(), "hi", __LINE__);
 
-    w->addAllWords("Hi, My name is Ayala Wang");
+    w->addAllWords("Hi, My name is Ayala Wang   $$$$$$$");
     w->addAllWords("Ayala   is  very        \n handsome :)");
 
     assertEquals(2, w->getWordCount("ayala"), "hi", __LINE__);
@@ -33,7 +33,11 @@ int main() {
     //w->dumpWordsSortedByOccurence(std::cout);
 
     w->dumpWordsSortedByWord(std::cout);
+    cout << "--------------------------" << endl;
+    w->dumpWordsSortedByOccurence(std::cout);
 
+    assertEquals(10, w->getTotalWords(), "hi", __LINE__);
+    assertEquals(2, w->getWordCount("ayala"), "hi", __LINE__);
 
     return 0; 
 }

@@ -130,7 +130,15 @@ void WordCount::dumpWordsSortedByWord(std::ostream &out) const {
 }
 
 bool sortfunction2(pair<string, int> s1, pair<string, int> s2) { 
-	return s1.second < s2.second; 
+	if (s1.second < s2.second) { 
+		return 1; 
+	}
+	else if (s1.second > s2.second) { 
+		return 0; 
+	}
+	else { 
+		return s1.first < s2.first; 
+	}
 }
 
 void WordCount::dumpWordsSortedByOccurence(std::ostream &out) const {
@@ -156,7 +164,6 @@ void WordCount::addAllWords(std::string text) {
 		}
 		else if (c == ' ' || c == '\n' || c == '\t' || c == '\0') {	
             if (!currentString.empty()) {
-				
                 words.push_back(makeValidWord(currentString));
 				incrWordCount(currentString);
                 currentString = "";
