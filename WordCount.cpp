@@ -159,8 +159,8 @@ void WordCount::addAllWords(std::string text) {
 	vector<string> words; 
 	string currentString = "";
 	for (char c : text) { 
-		if (isWordChar(c)) {
-            	currentString += c;
+		if (isWordChar(c) || c == '\'' || c == '-') {
+            currentString += c;
 		}
 		else if (c == ' ' || c == '\n' || c == '\t' || c == '\0') {	
             if (!currentString.empty()) {

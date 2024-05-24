@@ -38,6 +38,7 @@ int main() {
 
     assertEquals(10, w->getTotalWords(), "hi", __LINE__);
     assertEquals(2, w->getWordCount("ayala"), "hi", __LINE__);
+    
 
     return 0; 
 }
